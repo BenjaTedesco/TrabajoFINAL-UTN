@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #eaeaea;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 8%;
+  background: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 25px;
+  color: #222;
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+  display: inline-block;
+  font-size: 18px;
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 20px;
+  transition: .3s;
+  opacity: 0;
+  animation: slideTop .5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover, .navbar a.active {
+  color: #1743e3;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-between;
+  width: 130px;
+  height: 40px;
+}
+
+.social-media a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: 2px solid transparent;
+  text-decoration: none;
+  transform: rotate(45deg);
+  transition: .5s;
+  opacity: 0;
+  animation: slideSci .5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover {
+  border-color: #eaeaea;
+}
+
+.social-media a i{
+  font-size: 24px;
+  color: #eaeaea;
+  transform: rotate(-45deg);
+}
+
+.inicio {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 8% 0;
+  overflow: hidden;
+}
+
+.inicio-content {
+  max-width: 630px;
+}
+
+.inicio-content h1{
+  font-size: 50px;
+  line-height: 1.2;
+  opacity: 0;
+  animation: slideBottom 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.inicio-content h3{
+  font-size: 40px;
+  color: #1743e3;
+  opacity: 0;
+  animation: slideRight 1s ease forwards;
+  animation-delay: 1.3s;
+}
+
+.inicio-content p{
+  font-size: 16px;
+  margin:  15px 0 30px;
+  opacity: 0;
+  animation: slideLeft 1s ease forwards;
+  animation-delay: 1.6s;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 28px;
+  background: #1743e3;
+  border: 2px solid #1743e3;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  font-size: 16px;
+  color: #eaeaea;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: .5s;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+}
+
+.btn:hover{
+  background: transparent;
+  color: #1743e3;
+}
+
+.inicio-img {
+  position: relative;
+  right: -7%;
+  width: 450px;
+  height: 450px;
+  transform: rotate(45deg);
+}
+
+.inicio-img .rhombus {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #eaeaea;
+  border: 25px solid #1743e3;
+  box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+  opacity: 0;
+  animation: zoomOut 1s ease forwards;
+  animation-delay: 1.6s;
+}
+
+.inicio-img .rhombus img {
+  position: absolute;
+  top: -70px;
+  left: -170px;
+  max-width: 700px;
+  transform: rotate(-45deg);
+  opacity: 0;
+  animation: panel 1s ease forwards;
+  animation-delay: 2s;
+
+}
+
+.inicio .rhombus2 {
+  position: absolute;
+  top: -25%;
+  right: -25%;
+  width: 700px;
+  height: 700px;
+  background: #1743e3;
+  transform: rotate(45deg);
+  z-index: -1;
+}
+
+/* ACA TODAS LAS ANIMACIONES QUE USAMOS EN LA WEB */
+
+@keyframes slideRight {
+  0% {
+    transform: translate(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translate(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideTop {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideBottom {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideSci {
+  0% {
+    transform: translate(100px) rotate(45deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0) rotate(45deg);
+    opacity: 1;
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes panel {
+  0% {
+    transform: translate(300px, -300px) scale(0) rotate(-45deg);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(0, 0) scale(1) rotate(-45deg);
+    opacity: 1;
+  }
+}
+
+/* ACA TERMINA LA EDICION DE ANIMACIONES */
+
+.masinformacion-img {
+  position: relative;
+  right: -7%;
+  width: 450px;
+  height: 450px;
+  transform: rotate(45deg);
+}
+
+.masinformacion-img .rhombus3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #eaeaea;
+  border: 25px solid #1743e3;
+  box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+  opacity: 0;
+  animation: zoomOut 1s ease forwards;
+  animation-delay: 1.6s;
+}
+
+.masinformacion-img .rhombus3 img {
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  max-width: 400px;
+  opacity: 0;
+  animation: panel 1s ease forwards;
+  animation-delay: 2s;
+
+}
+
+.novedades-img {
+  position: relative;
+  right: -7%;
+  width: 450px;
+  height: 450px;
+  transform: rotate(45deg);
+}
+
+.novedades-img .rhombus4 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #eaeaea;
+  border: 25px solid #1743e3;
+  box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+  opacity: 0;
+  animation: zoomOut 1s ease forwards;
+  animation-delay: 1.6s;
+}
+
+.novedades-img .rhombus4 img {
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  max-width: 400px;
+  opacity: 0;
+  animation: panel 1s ease forwards;
+  animation-delay: 2s;
+
+}
+
+.nosotros-img {
+  position: relative;
+  right: -7%;
+  width: 450px;
+  height: 450px;
+  transform: rotate(45deg);
+}
+
+.nosotros-img .rhombus5 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #eaeaea;
+  border: 25px solid #1743e3;
+  box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+  opacity: 0;
+  animation: zoomOut 1s ease forwards;
+  animation-delay: 1.6s;
+}
+
+.nosotros-img .rhombus5 img {
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  max-width: 400px;
+  opacity: 0;
+  animation: panel 1s ease forwards;
+  animation-delay: 2s;
+
+}
+
+.contactanos-img {
+  position: relative;
+  right: -7%;
+  width: 450px;
+  height: 450px;
+  transform: rotate(45deg);
+}
+
+.contactanos-img .rhombus6 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #eaeaea;
+  border: 25px solid #1743e3;
+  box-shadow: -15px 15px 15px rgba(0, 0, 0, .2);
+  opacity: 0;
+  animation: zoomOut 1s ease forwards;
+  animation-delay: 1.6s;
+}
+
+.contactanos-img .rhombus6 img {
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  max-width: 400px;
+  opacity: 0;
+  animation: panel 1s ease forwards;
+  animation-delay: 2s;
+
+}
+
+/*ACA VAMOS A EDITAR TODO EL FORMULARIO*/
+
+form {
+  background: #fff;
+  width: 500px;
+  padding: 30px;
+  font-size: 18px;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+}
+
+form input, textarea {
+  width: 100%;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #000;
+  outline: none;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+}
+
+.send-btn {
+  width: 100px;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-size: 16px;
+  padding: 6px 0;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 2s;
+}
