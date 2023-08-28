@@ -423,15 +423,3 @@ form input, textarea {
   animation: slideTop 1s ease forwards;
   animation-delay: 2s;
 }
-
-.send-btn {
-  width: 100px;
-  border: none;
-  background: #000;
-  color: #fff;
-  font-size: 16px;
-  padding: 6px 0;
-  opacity: 0;
-  animation: slideTop 1s ease forwards;
-  animation-delay: 2s;
-}
